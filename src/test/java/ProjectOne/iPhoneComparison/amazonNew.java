@@ -5,7 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -14,8 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-public class amazon {
+public class amazonNew {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -40,19 +38,19 @@ public class amazon {
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='brandsRefinements']//span[@class='a-size-base a-color-base'][normalize-space()='Apple']")));
 //        driver.findElement(By.xpath("//div[@id='brandsRefinements']//span[@class='a-size-base a-color-base'][normalize-space()='Apple']")).click();
 
-        List<WebElement> productList = driver.findElements(By.xpath("//span[contains(@class,'a-size-medium a-color-base')]"));
+        List<WebElement> productList = driver.findElements(By.xpath("//div[@data-component-type='s-search-result']"));
 
         List<Map<String, String>> prices = new ArrayList<>();
         //Map<String, String> productInfo = new HashMap<>();
 
         for (WebElement product : productList) {
             //String name = product.getText();
-            String[] rawName = product.getText().split("-");
+            String[] rawName = product.findElement(By.xpath(".//span[@class='a-size-medium a-color-base a-text-normal']")).getText().split(",");
             String name = rawName[0].trim();
-            if (name.contains("I14 Pro Max")) {
+            if (name.contains("I14 Pro")) {
                 try {
                     //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='a-offscreen']/following-sibling::span")));
-                    WebElement priceElement = product.findElement(By.xpath("//span[@class='a-offscreen']/following-sibling::span"));
+                    WebElement priceElement = product.findElement(By.xpath(".//span[@class='a-offscreen']/following-sibling::span"));
                     String price = priceElement.getText();
 
                     Map<String, String> productInfo = new HashMap<>();

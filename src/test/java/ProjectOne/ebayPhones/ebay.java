@@ -36,17 +36,18 @@ public class ebay {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/span[@role='heading']")));
-        List<WebElement> phoneList = driver.findElements(By.xpath("//li/div[1]/div[2]/a[@class='s-item__link']/div/span"));
+        List<WebElement> phoneList = driver.findElements(By.xpath("//li[contains(@class, 's-item')]"));
 
         List<Map<String, String>> prices = new ArrayList<>();
 
         for (WebElement phone:phoneList){
-            String[] rawName = phone.getText().split("-");
-            String name = rawName[0];
+            String[] rawName = phone.findElement(By.xpath(".//div[contains(@class, 's-item__title')]")).getText().split("-");
+            String name = rawName[0].trim();
             if (name.contains("iPhone 13 Pro")){
                 try {
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div[1]/div[2]/a[@class='s-item__link']/following-sibling::div[4]/div/span[@class='s-item__price']")));
-                    String price = phone.findElement(By.xpath("//li/div[1]/div[2]/a[@class='s-item__link']/following-sibling::div[4]/div/span[@class='s-item__price']")).getText();
+                    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//span[contains(@class, 's-item__price')]")));
+                    String price = phone.findElement(By.xpath(".//span[contains(@class, 's-item__price')]")).getText();
+
                     Map<String, String> productInfo = new HashMap<>();
                     productInfo.put(name, price);
                     prices.add(productInfo);
