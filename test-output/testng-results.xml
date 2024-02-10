@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-10T00:16:26 SGT" name="Default suite" finished-at="2024-02-10T00:16:54 SGT" duration-ms="28314">
+    <groups>
+    </groups>
+    <test started-at="2024-02-10T00:16:26 SGT" name="Default test" finished-at="2024-02-10T00:16:54 SGT" duration-ms="28314">
+      <class name="projectOne.tests.PriceComparisonTest">
+        <test-method is-config="true" signature="launchApplicationAmazon()[pri:0, instance:projectOne.tests.PriceComparisonTest@4803b726]" started-at="2024-02-10T00:16:26 SGT" name="launchApplicationAmazon" finished-at="2024-02-10T00:16:29 SGT" duration-ms="2930" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplicationAmazon -->
+        <test-method signature="priceComparison()[pri:0, instance:projectOne.tests.PriceComparisonTest@4803b726]" started-at="2024-02-10T00:16:29 SGT" name="priceComparison" finished-at="2024-02-10T00:16:54 SGT" duration-ms="24906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- priceComparison -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:projectOne.tests.PriceComparisonTest@4803b726]" started-at="2024-02-10T00:16:54 SGT" name="tearDown" finished-at="2024-02-10T00:16:54 SGT" duration-ms="393" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- projectOne.tests.PriceComparisonTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
