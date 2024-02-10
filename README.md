@@ -1,2 +1,2 @@
 # phoneComparison
-Comparison of phone prices from two websites.
+iPhone price comparison from two websites-Amazon and eBay.
